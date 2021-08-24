@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 message?.setText("")
 
                 for (char in fullNumberString.indices){
-                    print(fullNumberString[char] + "\n")
                     if (char < 3) {
                         firstPartNumber = firstPartNumber + fullNumberString[char].toString().toInt()
                     } else {

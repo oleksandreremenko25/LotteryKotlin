@@ -1,6 +1,7 @@
 package com.example.lotterykotlin
 
 import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,13 +12,13 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
-    private var firstPartNumber: Int = 0
-    private var secondPartNumber: Int = 0
+
     private var fullNumber: EditText? = null
     private var fullNumberString: String = ""
     private var buttonCheckNumber: Button? = null
     private var message:TextView? = null
     private var bulb: ImageView? = null
+    private var circle: Drawable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         fullNumber = findViewById(R.id.inputNumberTicket)
         message = findViewById(R.id.message)
         bulb = findViewById(R.id.bulb)
+        circle = getDrawable(R.drawable.circle)
 
         calculation()
     }
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     fun calculation() {
         buttonCheckNumber?.setOnClickListener(View.OnClickListener () {
             fullNumberString = fullNumber?.text.toString()
+            var firstPartNumber: Int = 0
+            var secondPartNumber: Int = 0
 
             if (fullNumberString.length != 6) {
                 message?.setText("Не коректний номер білету")

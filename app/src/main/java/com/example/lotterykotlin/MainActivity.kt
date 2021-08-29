@@ -10,9 +10,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import android.content.res.Resources;
 
 class MainActivity : AppCompatActivity() {
-
     private var fullNumber: EditText? = null
     private var fullNumberString: String = ""
     private var buttonCheckNumber: Button? = null
@@ -33,15 +33,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calculation() {
+        var textInvalidTicket = getString(R.string.invalidLotteryTicket)
+        var textEmptyMessage = getString(R.string.emptyMessage)
+
         buttonCheckNumber?.setOnClickListener(View.OnClickListener () {
             fullNumberString = fullNumber?.text.toString()
             var firstPartNumber: Int = 0
             var secondPartNumber: Int = 0
 
             if (fullNumberString.length != 6) {
-                message?.setText("Не коректний номер білету")
+                message?.setText(textInvalidTicket)
             } else {
-                message?.setText("")
+                message?.setText(textEmptyMessage)
 
                 for (char in fullNumberString.indices){
                     if (char < 3) {

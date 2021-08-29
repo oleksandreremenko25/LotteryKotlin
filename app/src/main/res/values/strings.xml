@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">LotteryKotlin</string>
+    <string name="app_name">Lottery on the Kotlin</string>
+    <string name="button">Перевірити</string>
+    <string name="invalidLotteryTicket">Не коректний номер білету</string>
+    <string name="emptyMessage">Не коректний номер білету</string>
 </resources>

@@ -55,9 +55,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (firstPartNumber == secondPartNumber) {
-                    bulb?.getBackground()?.setColorFilter(ContextCompat.getColor(this, R.color.green), PorterDuff.Mode.MULTIPLY)
+                    bulb?.background?.setTint(ContextCompat.getColor(this, R.color.green))
                 } else {
-                    bulb?.getBackground()?.setColorFilter(ContextCompat.getColor(this, R.color.red), PorterDuff.Mode.MULTIPLY)
+                    bulb?.background?.setTint(ContextCompat.getColor(this, R.color.red))
                 }
             }
         });
